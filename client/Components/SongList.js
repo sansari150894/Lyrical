@@ -4,6 +4,7 @@ import {graphql} from 'react-apollo';
 // import '../style/style.css';
 
 class SongList extends Component{
+   
 
     renderSong(){
         return this.props.data.songs.map((song,index)=>{
@@ -15,9 +16,13 @@ class SongList extends Component{
         })
     }
     render(){
+        var styles = {
+            fontWeight:'bold',
+            textAlign:'center'
+        };
         if(this.props.data.loading){
             return(
-                <div>loading...</div>
+                <div style={styles}>loading...</div>
             )
         }
         return(
