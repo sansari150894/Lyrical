@@ -17,7 +17,11 @@ class SongList extends Component{
         return this.props.data.songs.map(({title,id})=>{
             return(
                 <li key={id} className="collection-item">
-                    {title}
+                    <Link
+                        to={`/song/${id}`}
+                    >
+                        {title}
+                    </Link>
                     <i
                     className='material-icons'
                     onClick={()=>this.onDeleteSong(id)}
@@ -44,7 +48,7 @@ class SongList extends Component{
                     {this.renderSong()}
                 </ul>
                 <Link
-                    to='song/new'
+                    to='songs/new'
                     className='btn-floating btn-large green right'
                 >
                 <i className='material-icons'>add</i>
