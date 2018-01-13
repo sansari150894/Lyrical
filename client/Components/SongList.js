@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
-// import '../style/style.css';
+import {Link} from 'react-router';
 
 class SongList extends Component{
    
@@ -18,7 +18,7 @@ class SongList extends Component{
     render(){
         var styles = {
             fontWeight:'bold',
-            textAlign:'center'
+            textAlign:'center',
         };
         if(this.props.data.loading){
             return(
@@ -26,9 +26,19 @@ class SongList extends Component{
             )
         }
         return(
-            <ul className="collection">
-                {this.renderSong()}
-            </ul>
+            <div>
+                 <ul className="collection">
+                    {this.renderSong()}
+                </ul>
+                <Link
+                    to='song/new'
+                    className='btn-floating btn-large red right'
+                >
+                <i className='material-icons'>add</i>
+                </Link>
+            </div>
+            
+           
         );
     }
 }
