@@ -28,7 +28,7 @@ class SongCreate extends Component{
                 <Link
                     to='/'
                 >
-                Back
+              <i className="material-icons">keyboard_arrow_left</i>
                 </Link>
                 <h3>Create a New Song</h3>
                 <form onSubmit={this.onSubmit.bind(this)}>
